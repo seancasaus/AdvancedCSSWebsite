@@ -1,0 +1,264 @@
+/*##########-Defaults-##########*/
+nav, header, footer {
+    display: block; /*When browser reads this, displays as block*/
+    background: #313440; /*sets page background to off white*/
+}
+
+body {
+    /*Browser's add margin to websites, ensures everything is flush to edge*/
+    line-height: 1;
+    margin: 0;
+    background: #313440; /*sets body background to off white*/
+}
+
+/*sets all labels in page to 35px and extra bold*/
+label {
+    font-size: 35px;
+    font-weight: 600; /*extra bold*/
+}
+
+/*applies style to all paragram elements on page*/
+p {
+    color: #838c9d;
+    font-size: 28px;
+    line-height: 1.2;
+}
+
+/*Form Group Container*/
+.container {
+    width: 100%; /*always want it to take up full display*/
+    margin: auto; /*centers elements in container*/
+    padding-top: 4%; /*gives a little padding to top of conatainer*/
+    padding-bottom: 4%; /*gives a little padding to bottom*/
+}
+
+/*row properties*/
+.row {
+    width: 100%; /*100% width for every row*/
+    display: flex; /*helps things inside row change sizes*/
+    flex-wrap: wrap; /*as things flex, wrap it around*/
+    align-items: center; /*helps center items in flex container*/
+}
+
+/*clears row*/
+.row::after {
+    display: table; 
+    clear: both; /*removes floats*/
+    content: ""; /*removes content*/
+}
+
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+/*##########-Nav_Bar-##########*/
+
+nav {
+    /*Takes up 100% width of screen view, whether desktop or mobile*/
+    width: 100%;
+    margin: 0; /*edge to edge*/
+}
+
+nav ul {
+    background-color: #313440;
+    overflow: hidden; /*elements too big to fit on screen minimized*/
+    margin: 0; /*edge to edge*/
+    padding: 0;
+}
+
+/*Parent*/
+ul.topnav li {
+    list-style: none; /*assure doesn't add bullet points*/
+    float: left; /*list items float left in one row*/
+}
+
+/*Child*/
+ul.topnav li.topnav-right {
+    float: right;
+}
+
+/*Parent, child, anchor*/
+ul.topnav li a {
+    display: block;
+    text-decoration: none; /*Removes Underlines*/
+    min-height: 16px;
+    text-align: center;
+    padding: 14px;
+    text-transform: uppercase;
+    color: #fda400;
+}
+
+/*adds action hover*/
+ul.topnav li a:hover {
+    /*background-color: #0080ff;*/
+    color: #0080ff;
+}
+
+ul.topnav li.dropdownIcon {
+    display: none;
+}
+
+/*########## Custom Styles ##########*/
+/*Contains Gradient Property */
+#section-1-gradient {
+    background: #076DFF; /*For browsers that dont support gradients*/
+    background: -webkit-linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet); /*safari*/
+    background: -o-linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet); /*opera*/
+    background: -noz-linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet); /*firefox*/
+    background: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);
+}
+
+div.box {
+    text-align: center; /*centers all text elements in box*/
+    background-color: #313440;
+    /*https://www.cssmatic.com/box-shadow*/
+    box-shadow: 0 0 0 1px rgba(0,0,0,.15),
+        0 2px 3px 0 rgba(0,0,0,.1); /*makes line around box*/
+}
+
+/*class for image icons*/
+div.icon {
+    width: 100%; /*allows image to flex with screen size*/
+}
+
+/*adds margin to content in left side column*/
+div.leftSide-col {
+    margin-left: 25%;
+}
+
+/*changes Username and Password text to dark slate grey*/
+div.leftSide-col h2 {
+    color: #aadd99;
+}
+
+/*adds margin to content in right side column*/
+div.rightSide-col {
+    margin: 10%;
+}
+
+/*which one should I learn?*/
+h1.large {
+    color: #373377; 
+    font-size: 56px; /*used h1 tags over <l> or <p> because margin*/
+    margin: 0; /*used line height over margin*/
+    line-height: 70px;
+}
+
+/*styles header title h1 tag*/
+h1.section2Header {
+    font-size: 65px;
+    text-align: center; /*ceters text*/
+    /*color: #313440;*/
+    color: #a971cb;
+}
+
+/*for all style properties of text on the page*/
+input[type="text"]{
+    font-size: 20px;
+    width: 400px;
+    min-width: 100px; /*dont make it less than*/
+    padding: 5px;
+    border-radius: 7px; /*rounds text box corners*/
+}
+
+/*for every h2 in a form tag*/
+form h2 {
+    color: #fff;
+}
+
+/*youtube styles*/
+.videoContainer iframe {
+    position: relative; /*keeps video in relative position*/
+    width: 100%; /*force video to take up 100% of div*/
+}
+
+/*sets angular label to red*/
+label.red {
+    color: #b52e31;
+}
+
+/*sets ue label to green*/
+label.green {
+    color: #41b883;
+}
+
+/*sets react label to blue*/
+label.blue {
+    color: #61dafb;
+}
+
+
+/*##########-Mobile-##########*/
+/*Media Querry, detects screen*/
+@media screen and (max-width: 700px) {
+    ul.topnav li:not(:nth-child(1)){ /*not operator*/
+        display: none;
+    }
+    
+    /*displays drop down icon from dropdownIcon class*/
+    ul.topnav li.dropdownIcon {
+        display: block; /*makes easier to position element*/
+        float: right;   /*moves icon to right*/
+    }
+    
+    ul.topnav.responsive li.dropdownIcon {
+        position: absolute; /*keeps in same position*/
+        top: 0;
+        right: 0;
+        
+    }
+    
+    /*if js function changes dropdown icon to mobile state*/
+    ul.topnav.responsive {
+        position: relative; /*keeps nav var from shifting*/
+    }
+    
+    ul.topnav.responsive li {
+        display: inline; /*makes sure list items are grouped together*/
+        float: none; /*disabled float inherit from list item*/
+    }
+    
+    ul.topnav.responsive li a {
+        display: block; /*makes list items stack ontop of eachother*/
+        text-align: left; /*overrights inherit from parent anchor*/
+    }
+    
+    /*adjust rows to take up 100% of screen space*/
+    .col-6 {
+        width: 100%;
+    }
+    
+    /*adjusts mrgins around content in rows to have a margin of 15%*/
+    div.leftSide-col, div.rightSide-col {
+        margin: 15px; 
+        text-align: center; /*centers noth columns*/
+    } 
+    
+    /*shortens text box width*/
+    input[type="text"] {
+        width: 350px;
+    }
+    
+    /*iframe styles*/
+    .videoContainer iframe { /*need to style iframe, not div*/
+        position: relative; /*keeps video in relative position*/
+        width: 100%; /*force video to take up 100% of column*/
+        margin: 0; /*guarantees no margin is created*/
+        overflow: hidden; /*prevents overflow scrolling*/
+    }
+    
+    h1.large {
+        text-align: center; /*text aligns header*/
+    }
+    
+}
+    
