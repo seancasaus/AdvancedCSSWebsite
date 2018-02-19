@@ -1,14 +1,14 @@
 /*##########-Defaults-##########*/
 nav, header, footer {
     display: block; /*When browser reads this, displays as block*/
-    background: #313440; /*sets page background to off white*/
+    background: #313440; /*sets page background*/
 }
 
 body {
     /*Browser's add margin to websites, ensures everything is flush to edge*/
     line-height: 1;
     margin: 0;
-    background: #313440; /*sets body background to off white*/
+    background: #313440; /*sets body background*/
 }
 
 /*sets all labels in page to 35px and extra bold*/
@@ -17,12 +17,28 @@ label {
     font-weight: 600; /*extra bold*/
 }
 
+/*edit hr styles*/
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #fda400;
+    margin: 1em 0;
+    padding: 0; 
+}
+
 /*applies style to all paragram elements on page*/
 p {
     color: #838c9d;
     font-size: 28px;
     line-height: 1.2;
 }
+
+article p {
+    font-size: 35px;
+    padding: 20px;
+}
+
 
 /*Form Group Container*/
 .container {
@@ -47,6 +63,7 @@ p {
     content: ""; /*removes content*/
 }
 
+/*potential columns per row options*/
 .col-1 {width: 8.33%;}
 .col-2 {width: 16.66%;}
 .col-3 {width: 25%;}
@@ -59,6 +76,11 @@ p {
 .col-10 {width: 83.33%%;}
 .col-11 {width: 91.66%;}
 .col-12 {width: 100%;}
+
+/*include padding into size of element*/
+* {
+    box-sizing: border-box;
+}
 
 /*##########-Nav_Bar-##########*/
 
@@ -119,10 +141,63 @@ ul.topnav li.dropdownIcon {
 
 div.box {
     text-align: center; /*centers all text elements in box*/
+    margin: 24px; /*space between boxes*/
+    padding: 36px 24px 40px 24px; /*top, right, bottom, left*/
+    border-radius: 7px; /*rounds out edges*/
     background-color: #313440;
     /*https://www.cssmatic.com/box-shadow*/
     box-shadow: 0 0 0 1px rgba(0,0,0,.15),
         0 2px 3px 0 rgba(0,0,0,.1); /*makes line around box*/
+    min-height: 450px; /*use to ensure boxes remain same size*/
+}
+
+div.fullStackIcon {
+    margin: 7px; /*gives margin to img*/
+}
+
+/*styles for full stack picture*/
+div.fullStackIcon img {
+    width: 100%; /*allows to give margin*/
+    display: block;
+    margin: auto;
+    /*horizontal. vertical. blur, spread*/
+    /*box-shadow: -2px -2px 20px 2px /*rgba(0/*sh*//*,0/*BG*//*,/*0/*bx*//*,.15/*op*//*), 2px 2px 27px 2px/*rgba(0,0,0,1);*/
+    
+}
+
+
+/*button styles*/
+button {
+    font-size: 32px;
+    font-weight: 700; /*extra bold font*/
+    color: #373377; /*same color as large class font*/
+    padding: 15px 60px; /*top/bottom, right/left*/
+    display: block; /*easier to position*/
+    text-align: center; 
+    margin: 5px; /*around button*/
+    border-radius: 7px; /*rounds edges*/
+    min-width: 300px;
+}
+
+/*style properties for angular button*/
+button.angularButton {
+    background-color: #b52e31;
+    display: block; /*easier to position*/
+    margin: auto; /*distributes space evenly*/
+}
+
+/*style properties for vue button*/
+button.vueButton {
+    background-color: #41b883;
+    display: block; /*easier to position*/
+    margin: auto; /*distributes space evenly*/
+}
+
+/*style properties for react button*/
+button.reactButton {
+    background-color: #61dafb;
+    display: block; /*easier to position*/
+    margin: auto; /*distributes space evenly*/
 }
 
 /*class for image icons*/
@@ -196,6 +271,33 @@ label.blue {
     color: #61dafb;
 }
 
+/*sets styles of footer*/
+footer.foot {
+    background-color: #373377;
+    padding-left: 10%; /*margin creates space outside of footer*/
+}
+
+/*sets header properties in footer*/
+footer.foot h1 {
+    color: #fff;
+    font-size: 35px;
+}
+
+/*sets list properties in footer*/
+footer.foot ul {
+    list-style: none; /*remove bullerpoints*/
+    text-align: left;
+    padding-left: 0;
+    
+}
+
+/*sets list item properties*/
+footer.foot ul li {
+    color: #1e1e1e;
+    font-size: 22px;
+    line-height: 1.5;
+}
+
 
 /*##########-Mobile-##########*/
 /*Media Querry, detects screen*/
@@ -232,8 +334,41 @@ label.blue {
         text-align: left; /*overrights inherit from parent anchor*/
     }
     
+    /*changes font size of second header*/
+    h1.section2Header {
+        font-size: 50px;
+    }
+    
+    article p {
+        font-size: 25px;
+    }
+    
     /*adjust rows to take up 100% of screen space*/
-    .col-6 {
+    .col-5, .col-7, .col-6, .col-4 { 
+        width: 100%;
+        margin: 0;
+    }
+    
+    /*accesses footer elements for mobile*/
+    div.footStack {
+        width: 50%;
+        display: block;
+    }
+    
+    
+    /*adjusts padding for mobile*/
+    div.box {
+        padding: 5px;
+        display: block; /*makes easier to position element*/
+    }
+    
+    /*give a margin around the parent of the image*/
+    div.fullStackIcon {
+        margin: 10px;
+    }
+    
+    /*set htm;/css/js image to take up 100% of parent*/
+    div.fullStackIcon img {
         width: 100%;
     }
     
@@ -260,5 +395,10 @@ label.blue {
         text-align: center; /*text aligns header*/
     }
     
+    /*adjusts padding for mobile buttons*/
+    div.mobileButtons {
+        padding: 5px;
+        display: block; /*makes easier to position element*/
+    }
 }
     
